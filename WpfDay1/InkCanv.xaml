@@ -1,0 +1,112 @@
+﻿<Window x:Class="WpfDay1.InkCanv"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDay1"
+        mc:Ignorable="d"
+        Title="InkCanv"
+       
+        Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border BorderThickness="5"
+                BorderBrush="Orange"
+                CornerRadius="5"
+                Background="Yellow"
+                Padding="5"
+                >
+
+            <InkCanvas x:Name="ink"></InkCanvas>
+        </Border>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <GroupBox Width="100" Header="Colors">
+                <StackPanel>
+                    <RadioButton Checked="Change_Color">Red</RadioButton>
+                    <RadioButton Checked="Change_Color">Green</RadioButton>
+                    <RadioButton Checked="Change_Color">Blue</RadioButton>
+
+                </StackPanel>
+
+            </GroupBox>
+
+
+            <GroupBox Width="100" Header="Modes">
+                <StackPanel>
+                    <RadioButton Checked="Change_Mode">Ink</RadioButton>
+                    <RadioButton Checked="Change_Mode">Select</RadioButton>
+                    <RadioButton Checked="Change_Mode">Erase</RadioButton>
+                    <RadioButton Checked="Change_Mode">EraseByStrock</RadioButton>
+
+                </StackPanel>
+
+            </GroupBox>
+            <GroupBox Width="100" Header="Drawing Shapes">
+                <StackPanel>
+                    <RadioButton Checked="shape">Ellipse</RadioButton>
+                    <RadioButton Checked="shape">Rectangle</RadioButton>
+                </StackPanel>
+
+            </GroupBox>
+            <GroupBox Width="100" Header="Brush Size">
+                <StackPanel>
+                    <RadioButton Checked="Brush_size" >Small</RadioButton>
+                    <RadioButton Checked="Brush_size">Normal</RadioButton>
+                    <RadioButton Checked="Brush_size" >Large</RadioButton>
+                </StackPanel>
+
+            </GroupBox>
+
+
+        </StackPanel>
+        <WrapPanel Grid.Row="1" Margin="422,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="341">
+            <Button 
+            Margin="3"
+            Background="Orange"
+            Click="Button_Click"
+            Content="New"
+                Name="New_Btn"
+            Width="50" Height="40" />
+            <Button 
+            Margin="3"
+            Background="Orange"
+            Click="Button_Click"
+            Content="Paste"
+                Name="Paste_Btn"
+            Width="50" Height="40" />
+            <Button 
+            Margin="3"
+            Background="Orange"
+            Click="Button_Click"
+            Content="Copy"
+                Name="Copy_Btn"
+            Width="50" Height="40" />
+            <Button 
+            Margin="3"
+            Background="Orange"
+            Click="Button_Click"
+            Content="Save"
+                Name="Save_Btn"
+            Width="50" Height="40" />
+            <Button 
+            Margin="3"
+            Background="Orange"
+            Click="Button_Click"
+            Content="Load"
+                Name="Load_Btn"
+            Width="50" Height="40" />
+            <Button 
+            Margin="3"
+            Background="Orange"
+            Click="Button_Click"
+            Content="Cut"
+                Name="Cut_Btn"
+            Width="50" Height="40" />
+        </WrapPanel>
+
+    </Grid>
+</Window>
